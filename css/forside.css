@@ -1,0 +1,230 @@
+/*GENEREL*/
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: #c9c9d4;
+  position: relative;
+  overflow-x: hidden;
+  background: black;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: url("../img/baggrundTilForside.webp") center / cover no-repeat;
+
+  filter: blur(1px) brightness(0.5);
+  transform: scale(1.03);
+
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(20, 15, 30, 0.1) 0%,
+    rgba(20, 15, 30, 0.3) 60%,
+    rgba(20, 15, 30, 0.5) 100%
+  );
+
+  z-index: -1;
+}
+
+h1 {
+  margin: 0;
+
+  font-family: "PlayfairDisplay", serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 1px;
+
+  color: #c6a8ff;
+
+  text-shadow: 0 0 25px rgba(198, 168, 255, 0.25);
+}
+
+h2 {
+  margin-top: 0.5rem;
+  max-width: 600px;
+
+  font-size: 1rem;
+  line-height: 1.6;
+
+  color: #c9c9d4;
+}
+
+h3 {
+  margin-top: 2.5rem;
+
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #d6c27a;
+}
+
+nav a {
+  color: #c9c9d4;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/*LAYOUT*/
+
+header {
+  position: fixed;
+  bottom: 30px;
+  left: 40px;
+  z-index: 10;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-grid {
+  position: absolute;
+  inset: 0;
+}
+
+.book {
+  position: absolute;
+  width: 150px;
+}
+
+.book img {
+  width: 100%;
+  border-radius: 2px;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.book:hover img {
+  transform: translateY(-25px) scale(1.12) rotate(-2deg);
+
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(198, 168, 255, 0.35);
+}
+
+/* ØVERST VENSTRE */
+.book:nth-child(1) {
+  top: 15%;
+  left: 10%;
+}
+
+/* ØVERST HØJRE */
+.book:nth-child(2) {
+  top: 10%;
+  right: 10%;
+}
+
+/* NEDERST VENSTRE */
+.book:nth-child(3) {
+  top: 75%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+/* NEDERST HØJRE */
+.book:nth-child(4) {
+  top: 75%;
+  right: 15%;
+  transform: translateY(-50%);
+}
+
+/* ØVERST */
+.book:nth-child(5) {
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+header {
+  bottom: 15px;
+  left: 20px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    min-height: auto;
+    padding: 80px 20px 40px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  .book-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 55px;
+    column-gap: 30px;
+
+    padding: 0 30px 80px;
+  }
+
+  .book {
+    position: static !important;
+    transform: none !important;
+    width: 120px;
+  }
+
+  .book img {
+    border-radius: 6px;
+  }
+
+  .book:hover img {
+    transform: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  header {
+    left: 15px;
+    bottom: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-VariableFont_opsz\,wght.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplay-VariableFont_wght.woff2") format("woff2");
+}
