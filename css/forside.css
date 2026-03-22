@@ -1,4 +1,5 @@
 /*GENEREL*/
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -41,7 +42,7 @@ h1 {
   margin: 0;
 
   font-family: "PlayfairDisplay", serif;
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: 4rem;
   letter-spacing: 1px;
 
   color: #c6a8ff;
@@ -125,33 +126,33 @@ header {
     0 0 40px rgba(198, 168, 255, 0.35);
 }
 
-/* ØVERST VENSTRE */
+/* Bog øverst til venstre*/
 .book:nth-child(1) {
   top: 15%;
   left: 10%;
 }
 
-/* ØVERST HØJRE */
+/* Bog øverst til højre*/
 .book:nth-child(2) {
   top: 10%;
   right: 10%;
 }
 
-/* NEDERST VENSTRE */
+/* Bog nederst til venstre*/
 .book:nth-child(3) {
   top: 75%;
   left: 15%;
   transform: translateY(-50%);
 }
 
-/* NEDERST HØJRE */
+/* Bog nederst til højre*/
 .book:nth-child(4) {
   top: 75%;
   right: 15%;
   transform: translateY(-50%);
 }
 
-/* ØVERST */
+/* Øverste bog */
 .book:nth-child(5) {
   top: 6%;
   left: 50%;
