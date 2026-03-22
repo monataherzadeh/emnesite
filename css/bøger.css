@@ -157,22 +157,6 @@ main section {
   position: relative;
 }
 
-main section::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-}
-
 .plot-text,
 .verdict p {
   max-width: 65ch;
